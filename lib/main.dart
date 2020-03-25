@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:test_flutter/Pages/Test.dart';
 import 'package:test_flutter/Store/counter.dart';
+import 'package:test_flutter/Store/test.dart' as t;
+
 
 void main() {
   runApp(MainApp());
@@ -15,7 +17,8 @@ class MainApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         // Provider<Counter>(create: (_) => Counter()),
-        Provider<Counter>.value(value: Counter(),)
+        Provider<Counter>.value(value: Counter(),),
+        Provider<t.Test>.value(value: t.Test(),),
       ], 
       child: MaterialApp(
         title: 'Test',
